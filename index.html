@@ -6,6 +6,12 @@
   <title>Action Club — Actie‑choreografie • Workshops • Producties</title>
   <meta name="description" content="Actie‑choreografie en stunt‑inspiratie in Nederland. Workshops, schoolprogramma’s, teambuilding, en film/producties. Filmwaardig, veilig, energiek."/>
 
+  <!-- Favicon (inline enso) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="./favicon/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -17,15 +23,23 @@
   <!-- NAV -->
   <nav class="nav">
     <div class="wrap nav__inner">
-      <a class="brand" href="#top">
-        <span class="enso" aria-hidden="true"></span>
-        <span>Action Club</span>
+      <a class="brand" href="#top" aria-label="Action Club — Home">
+        <picture>
+          <!-- smaller sources for low DPR browsers -->
+          <source srcset="./favicon/favicon-32x32.png" media="(max-width: 480px)">
+          <source srcset="./favicon/android-chrome-192x192.png" media="(max-width: 1024px)">
+          <!-- default high-res -->
+          <img class="brand__icon" src="./favicon/android-chrome-512x512.png" alt="" width="512" height="512" decoding="async">
+        </picture>
+        <span class="brand__title">Action Club</span>
       </a>
+
       <button class="burger" aria-label="Menu" aria-controls="navmenu" aria-expanded="false" data-burger></button>
       <div id="navmenu" class="menu" data-menu>
         <a href="#productions">Productions</a>
         <a href="#diensten">Diensten</a>
         <a href="#about">About</a>
+        <a href="#partners">Partners</a>
         <a href="#dojo">Dojo</a>
         <a href="#boeken">Boeken</a>
       </div>
@@ -74,46 +88,54 @@
       <p class="sub">Selectie van recente projecten. Hover/tap voor beweging. (Plaats hier je eigen reel/thumbnails.)</p>
 
       <div class="grid projects reveal">
-        <!-- Card 1 -->
-        <article class="card">
-          <video class="poster" muted loop preload="none" poster="/media/p1.jpg">
-            <source src="/media/p1.mp4" type="video/mp4"/>
-          </video>
-          <div class="card__meta">
-            <span class="tag">Workshop Recap</span>
-            <strong style="margin-left:auto;padding:8px 12px">Groningen VO</strong>
-          </div>
-        </article>
-        <!-- Card 2 -->
-        <article class="card">
-          <video class="poster" muted loop preload="none" poster="/media/p2.jpg">
-            <source src="/media/p2.mp4" type="video/mp4"/>
-          </video>
-          <div class="card__meta">
-            <span class="tag">Teambuilding</span>
-            <strong style="margin-left:auto;padding:8px 12px">IT‑bedrijf</strong>
-          </div>
-        </article>
-        <!-- Card 3 -->
-        <article class="card">
-          <video class="poster" muted loop preload="none" poster="/media/p3.jpg">
-            <source src="/media/p3.mp4" type="video/mp4"/>
-          </video>
-          <div class="card__meta">
-            <span class="tag">Choreo & Staging</span>
-            <strong style="margin-left:auto;padding:8px 12px">Theater</strong>
-          </div>
-        </article>
-        <!-- Card 4 -->
-        <article class="card">
-          <video class="poster" muted loop preload="none" poster="/media/p4.jpg">
-            <source src="/media/p4.mp4" type="video/mp4"/>
-          </video>
-          <div class="card__meta">
-            <span class="tag">Inclusive Action</span>
-            <strong style="margin-left:auto;padding:8px 12px">Special</strong>
-          </div>
-        </article>
+      <!-- Card 1 -->
+<article class="card">
+  <video class="poster" muted loop preload="none"
+    poster="https://images.unsplash.com/photo-1606335543042-d2cf0f7f93e2?auto=format&fit=crop&w=1400&q=80">
+    <source src="/media/p1.mp4" type="video/mp4"/>
+  </video>
+  <div class="card__meta">
+    <span class="tag">Workshop Recap</span>
+    <strong style="margin-left:auto;padding:8px 12px">Groningen VO</strong>
+  </div>
+</article>
+
+<!-- Card 2 -->
+<article class="card">
+  <video class="poster" muted loop preload="none"
+    poster="https://images.unsplash.com/photo-1520975922203-b3f8b6f1d06f?auto=format&fit=crop&w=1400&q=80">
+    <source src="/media/p2.mp4" type="video/mp4"/>
+  </video>
+  <div class="card__meta">
+    <span class="tag">Teambuilding</span>
+    <strong style="margin-left:auto;padding:8px 12px">IT-bedrijf</strong>
+  </div>
+</article>
+
+<!-- Card 3 -->
+<article class="card">
+  <video class="poster" muted loop preload="none"
+    poster="https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=1400&q=80">
+    <source src="/media/p3.mp4" type="video/mp4"/>
+  </video>
+  <div class="card__meta">
+    <span class="tag">Choreo & Staging</span>
+    <strong style="margin-left:auto;padding:8px 12px">Theater</strong>
+  </div>
+</article>
+
+<!-- Card 4 -->
+<article class="card">
+  <video class="poster" muted loop preload="none"
+    poster="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80">
+    <source src="/media/p4.mp4" type="video/mp4"/>
+  </video>
+  <div class="card__meta">
+    <span class="tag">Inclusive Action</span>
+    <strong style="margin-left:auto;padding:8px 12px">Special</strong>
+  </div>
+</article>
+
       </div>
     </div>
   </section>
@@ -181,6 +203,44 @@
     </div>
   </section>
 
+  <!-- PARTNERS -->
+<section id="partners" class="section">
+  <div class="wrap">
+    <h2 class="title">Partners</h2>
+    <p class="sub">Samen bouwen we aan strak design, sterke techniek en slimme beweging.</p>
+
+    <div class="grid partners reveal">
+      <!-- TinqDesign -->
+      <a class="partner card partner--tinq" href="https://tinqdesign.nl/" target="_blank" rel="noopener">
+        <div class="partner__glow" aria-hidden="true"></div>
+        <div class="partner__badge">
+          <span class="partner__label">Creative Partner</span>
+        </div>
+        <div class="partner__logo">
+          <span class="partner__word">Tinq</span><span class="partner__word partner__word--accent">Design</span>
+        </div>
+        <p class="partner__desc">Branding & web met impact. Minimalistisch, snel en conversion-ready.</p>
+        <span class="partner__cta">Bezoek site ↗</span>
+      </a>
+
+      <!-- Achieve Body Control -->
+      <a class="partner card partner--abc" href="https://www.achievebodycontrol.nl/" target="_blank" rel="noopener">
+        <div class="partner__glow" aria-hidden="true"></div>
+        <div class="partner__badge">
+          <span class="partner__label">Movement Partner</span>
+        </div>
+        <div class="partner__logo">
+          <span class="partner__word">Achieve</span>
+          <span class="partner__word partner__stack">Body<br/>Control</span>
+        </div>
+        <p class="partner__desc">Coaching, kracht & mobiliteit — fundering voor veilige actie-choreo.</p>
+        <span class="partner__cta">Bezoek site ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
   <!-- DOJO / training hub (coming soon style) -->
   <section id="dojo" class="section section--muted">
     <div class="wrap">
@@ -230,4 +290,3 @@
 
 </body>
 </html>
-
