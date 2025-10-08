@@ -74,11 +74,12 @@ img,video{display:block;max-width:100%}
 }
 .btn:hover{transform:translateY(-1px)}
 .btn:focus-visible{outline:none;box-shadow:var(--ring)}
-.btn--accent{
---bg: linear-gradient(135deg, #D72638, #FF4E00);
+.btn--accent {
+  --bg: linear-gradient(135deg, #D72638, #FF4E00);
   --ink:#071318;
-  box-shadow:0 16px 34px rgba(6,182,212,.22)
+  box-shadow: 0 16px 34px rgba(255, 78, 0, .35);
 }
+
 .btn--ghost{--bg:#fff; --ink:#0f172a; border:1px solid var(--line)}
 .btn--block{width:100%;justify-content:center}
 
@@ -150,7 +151,8 @@ img,video{display:block;max-width:100%}
 #contact .way--accent{
   border-color:transparent;
   background:linear-gradient(135deg, #D72638, #FF4E00);
-  color:#071318; box-shadow:0 16px 34px rgba(6,182,212,.22);
+  color:#071318; 
+  box-shadow: 0 16px 34px rgba(255, 78, 0, .35);
 }
 
 #contact .highlights{ margin:6px 0 0; padding:0 0 0 18px; color:var(--muted); line-height:1.7; }
@@ -204,7 +206,8 @@ img,video{display:block;max-width:100%}
 }
 
 #contact .btn--block{
-  margin-top:10px; box-shadow:0 18px 40px rgba(6,182,212,.22);
+  margin-top:10px; 
+  box-shadow: 0 16px 34px rgba(255, 78, 0, .35);
 }
 
 .foot{padding:28px 0;color:#6b7280}
@@ -217,3 +220,70 @@ img,video{display:block;max-width:100%}
 ::selection{background:rgba(6,182,212,.25)}
 @media (max-width:640px){ .btn{flex:1;justify-content:center} }
 @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important} }
+
+/* ===== iPhone 13 / small phones polish ===== */
+@supports (padding: max(0px)) {
+  .nav { padding-top: max(env(safe-area-inset-top), 0px); }
+}
+
+/* breder bereik zodat ‘kleine’ Androids ook meepakken */
+@media (max-width: 430px) {
+
+  html{ scroll-padding-top:72px; }
+  .wrap{ padding-left:16px; padding-right:16px; }
+  .section{ padding:48px 0; }
+
+  /* NAV */
+  .nav__in{ min-height:56px; }
+  .brand{ gap:8px; }
+  .brand .brand__icon{ height:28px; width:auto; }
+  .menu{
+    inset:64px 12px auto 12px;      /* net wat meer ruimte langs de randen */
+    border-radius:16px;
+  }
+  .burger{ width:44px;height:44px; } /* grotere hit-area */
+
+  /* HERO */
+  .h1{ font-size:clamp(26px, 8vw, 38px); line-height:1.08; }
+  .lead{ font-size:clamp(15px, 3.8vw, 17px); }
+  .hero{ padding:24px 0; }
+  .hero__grid{ grid-template-columns:1fr; gap:18px; }
+  .hero__media{ border-radius:16px; }
+
+  /* CTA knoppen in hero onder elkaar, full-width */
+  .hero .grid{ grid-template-columns:1fr !important; gap:10px !important; }
+  .btn{ padding:12px 14px; font-size:14px; }
+  .btn--block, .hero .btn{ width:100%; justify-content:center; }
+
+  /* SERVICES kaarten */
+  .svc{ padding:14px; border-radius:12px; }
+  .svc h3{ font-size:1.05rem; }
+  .chip{ padding:5px 10px; font-size:.82rem; }
+  .price{ font-size:1rem; }
+  .amount{ width:100%; } /* custom bedrag veld netjes full-width */
+
+  /* CASES tiles */
+  .case__meta{ padding:10px 12px; font-size:.95rem; }
+
+  /* CONTACT */
+  #contact .contactGrid{ grid-template-columns:1fr; gap:16px; }
+  #contact .formCard{ padding:18px; border-radius:18px; }
+  #contact .form.form--grid .fields{ grid-template-columns:1fr; gap:12px; }
+  #contact .field__hint{ right:10px; bottom:8px; }
+
+  /* iOS: voorkom auto-zoom op inputs (<16px) */
+  input, select, textarea, button{ font-size:16px; }
+
+  /* “Mail / Bel” rij wat compacter en tappable */
+  #contact .ways{ grid-template-columns:1fr; gap:8px; }
+  #contact .way{ padding:12px 14px; border-radius:12px; }
+
+  /* Footer wat lucht */
+  .foot{ padding:20px 0; }
+}
+
+/* ietsjes strakker voor extra smal (iPhone SE / landscape) */
+@media (max-width: 360px){
+  .h1{ font-size:clamp(24px, 9vw, 34px); }
+  .menu{ inset:60px 10px auto 10px; }
+}
